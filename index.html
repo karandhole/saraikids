@@ -147,6 +147,153 @@
     </section>
     <!-- banner area end -->
 
+
+
+    <section class="rts-contact-area rts-section-gap inner">
+        <div class="container">
+            <div class="section-title-area text-center">
+                <p class="pre-title justify-content-center"><img src="assets/images/banner/title-img.svg" alt="">Get In
+                    Touch</p>
+                <h2 class="section-title">Needs Help? Let’s Get in Touch</h2>
+            </div>
+            <div class="section-inner">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="get-in-touch">
+                            <ul class="contact-wrapper-list">
+                                <li class="phone bg-two">
+                                    <div class="icon">
+                                        <img src="assets/images/icon/phone.svg" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <h4>Phone</h4>
+                                        <p class="desc"><a href="call-to:0123456789"> +91 9175457887</a></p>
+                                    </div>
+                                </li>
+                                <li class="phone bg-four">
+                                    <div class="icon">
+                                        <img src="assets/images/icon/mail.svg" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <h4>Email Address</h4>
+                                        <p class="desc"><a href="mail-to:info@studyhub.com">
+                                                saraikidspunawale@gmail.com</a></p>
+                                    </div>
+                                </li>
+                                <li class="phone bg-one">
+                                    <div class="icon">
+                                        <img src="assets/images/icon/address.svg" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <h4>Location Address</h4>
+                                        <p class="desc">Koyte Nagar, Punawale, Pune, Maharashtra - 411033</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+                            class="contact-form" onsubmit="return handleSubmit(event)">
+                            <input type="hidden" name="access_key" value="8120df47-33e3-4f6a-bce2-31ed0db12ca6">
+
+                            <h3 class="heading-title">Send Us Message</h3>
+                            <div class="form-inner">
+                                <div class="single-input">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="single-input">
+                                    <input type="email" name="email" placeholder="Email Address" required>
+                                </div>
+                                <div class="single-input">
+                                    <input type="text" name="phone" placeholder="Phone Number" required>
+                                </div>
+                                <div class="single-input">
+                                    <div class="left-filter">
+                                        <select class="nice-select" name="subject" required>
+                                            <option value="Seeking Admission">Seeking Admission</option>
+                                            <option value="Sr.KG">Sr.KG</option>
+                                            <option value="Jr.KG">Jr.KG</option>
+                                            <option value="Nursery">Nursery</option>
+                                            <option value="Play Group">Play Group</option>
+                                            <option value="Day Care">Day Care</option>
+                                            <option value="Sport Activity">Sport Activity</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="single-input message">
+                                    <textarea name="message" placeholder="Message" required></textarea>
+                                </div>
+                                <div class="form-btn">
+                                    <button type="submit" class="rts-btn btn-primary">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Success Popup -->
+                        <div id="successPopup">
+                            <p>Form submitted successfully!</p>
+                            <button onclick="closePopup()">OK</button>
+                        </div>
+
+                        <style>
+                            #successPopup {
+                                display: none;
+                                position: fixed;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                background: #fff;
+                                padding: 20px;
+                                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                                border-radius: 8px;
+                                text-align: center;
+                                font-size: 16px;
+                                font-weight: bold;
+                                color: #333;
+                            }
+
+                            #successPopup button {
+                                margin-top: 10px;
+                                padding: 8px 16px;
+                                border: none;
+                                background-color: #28a745;
+                                color: white;
+                                border-radius: 4px;
+                                cursor: pointer;
+                                font-size: 14px;
+                            }
+
+                            #successPopup button:hover {
+                                background-color: #218838;
+                            }
+                        </style>
+
+                        <script>
+                            function handleSubmit(event) {
+                                event.preventDefault();
+                                const form = event.target;
+                                fetch(form.action, {
+                                    method: form.method,
+                                    body: new FormData(form)
+                                }).then(response => response.json())
+                                    .then(() => {
+                                        document.getElementById('successPopup').style.display = 'block';
+                                        form.reset();
+                                    })
+                                    .catch(error => console.error('Error:', error));
+                            }
+                            function closePopup() {
+                                document.getElementById('successPopup').style.display = 'none';
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- about area start -->
     <section class="rts-about-area rts-shape-move rts-section-gap">
         <div class="container">
@@ -1323,150 +1470,7 @@
         </div>
     </section>
 
-    <section class="rts-contact-area rts-section-gap inner">
-        <div class="container">
-            <div class="section-title-area text-center">
-                <p class="pre-title justify-content-center"><img src="assets/images/banner/title-img.svg" alt="">Get In
-                    Touch</p>
-                <h2 class="section-title">Needs Help? Let’s Get in Touch</h2>
-            </div>
-            <div class="section-inner">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="get-in-touch">
-                            <ul class="contact-wrapper-list">
-                                <li class="phone bg-two">
-                                    <div class="icon">
-                                        <img src="assets/images/icon/phone.svg" alt="">
-                                    </div>
-                                    <div class="text">
-                                        <h4>Phone</h4>
-                                        <p class="desc"><a href="call-to:0123456789"> +91 9175457887</a></p>
-                                    </div>
-                                </li>
-                                <li class="phone bg-four">
-                                    <div class="icon">
-                                        <img src="assets/images/icon/mail.svg" alt="">
-                                    </div>
-                                    <div class="text">
-                                        <h4>Email Address</h4>
-                                        <p class="desc"><a href="mail-to:info@studyhub.com">
-                                                saraikidspunawale@gmail.com</a></p>
-                                    </div>
-                                </li>
-                                <li class="phone bg-one">
-                                    <div class="icon">
-                                        <img src="assets/images/icon/address.svg" alt="">
-                                    </div>
-                                    <div class="text">
-                                        <h4>Location Address</h4>
-                                        <p class="desc">Koyte Nagar, Punawale, Pune, Maharashtra - 411033</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
-                            class="contact-form" onsubmit="return handleSubmit(event)">
-                            <input type="hidden" name="access_key" value="8120df47-33e3-4f6a-bce2-31ed0db12ca6">
-
-                            <h3 class="heading-title">Send Us Message</h3>
-                            <div class="form-inner">
-                                <div class="single-input">
-                                    <input type="text" name="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="single-input">
-                                    <input type="email" name="email" placeholder="Email Address" required>
-                                </div>
-                                <div class="single-input">
-                                    <input type="text" name="phone" placeholder="Phone Number" required>
-                                </div>
-                                <div class="single-input">
-                                    <div class="left-filter">
-                                        <select class="nice-select" name="subject" required>
-                                            <option value="Seeking Admission">Seeking Admission</option>
-                                            <option value="Sr.KG">Sr.KG</option>
-                                            <option value="Jr.KG">Jr.KG</option>
-                                            <option value="Nursery">Nursery</option>
-                                            <option value="Play Group">Play Group</option>
-                                            <option value="Day Care">Day Care</option>
-                                            <option value="Sport Activity">Sport Activity</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="single-input message">
-                                    <textarea name="message" placeholder="Message" required></textarea>
-                                </div>
-                                <div class="form-btn">
-                                    <button type="submit" class="rts-btn btn-primary">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-
-                        <!-- Success Popup -->
-                        <div id="successPopup">
-                            <p>Form submitted successfully!</p>
-                            <button onclick="closePopup()">OK</button>
-                        </div>
-
-                        <style>
-                            #successPopup {
-                                display: none;
-                                position: fixed;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                background: #fff;
-                                padding: 20px;
-                                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-                                border-radius: 8px;
-                                text-align: center;
-                                font-size: 16px;
-                                font-weight: bold;
-                                color: #333;
-                            }
-
-                            #successPopup button {
-                                margin-top: 10px;
-                                padding: 8px 16px;
-                                border: none;
-                                background-color: #28a745;
-                                color: white;
-                                border-radius: 4px;
-                                cursor: pointer;
-                                font-size: 14px;
-                            }
-
-                            #successPopup button:hover {
-                                background-color: #218838;
-                            }
-                        </style>
-
-                        <script>
-                            function handleSubmit(event) {
-                                event.preventDefault();
-                                const form = event.target;
-                                fetch(form.action, {
-                                    method: form.method,
-                                    body: new FormData(form)
-                                }).then(response => response.json())
-                                    .then(() => {
-                                        document.getElementById('successPopup').style.display = 'block';
-                                        form.reset();
-                                    })
-                                    .catch(error => console.error('Error:', error));
-                            }
-                            function closePopup() {
-                                document.getElementById('successPopup').style.display = 'none';
-                            }
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- blog area end -->
 
     <!-- footer call to action area start -->
